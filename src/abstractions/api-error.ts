@@ -7,7 +7,7 @@ export class ApiError extends Error implements IError {
 
   public fields!: { name: { message: string } };
 
-  constructor(msg: string, statusCode: number, name: string = 'ApiError') {
+  constructor(msg: string, statusCode: number, name = 'ApiError') {
     super();
     this.name = name;
     this.message = msg;
