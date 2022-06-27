@@ -21,14 +21,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true
   },
-  "include": [
-    "src/**/*.ts",
-    ".env",
-    ".env.*",
-    "tests/**/*.ts",
-    "index.js",
-    "jest.config.js",
-    "config/*.config.js"
-  ],
+  "include": ["src/**/*.ts", ".env", ".env.*", "tests/**/*.ts", "index.js"],
   "exclude": ["node_modules", "build"]
 }

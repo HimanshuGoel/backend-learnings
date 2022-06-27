@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "start": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "build": "npm audit && npm run lint && tsc",
+    "prod": "npm build && node ./build/src/server.js",
     "tsc": "tsc",
-    "build": "npm audit && tsc",
-    "prod": "npm run lint && tsc && node ./build/src/server.js",
     "lint": "eslint src/**/*.ts",
     "lint-fix": "eslint --fix src/**/*.ts",
     "pretty": "prettier --write 'src/**/*.ts'"

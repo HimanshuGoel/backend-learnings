@@ -1,6 +1,6 @@
 import app from './app';
 
-import Logger from './utilities/logger.utility';
+import { Logger } from './utilities/logger.utility';
 
 const PORT = process.env.PORT || 3000;
 

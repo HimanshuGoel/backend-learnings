@@ -5,4 +5,3 @@ export function generateUID() {
   const secondPart = `000${random2.toString(36)}`.slice(-3);
   return firstPart + secondPart;
 }
-

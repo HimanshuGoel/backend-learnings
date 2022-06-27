@@ -1,15 +1,15 @@
-import { Application, NextFunction, Request, Response } from 'express';
-import { ReasonPhrases, StatusCodes } from 'http-status-codes';
-
 import os from 'os';
 import process from 'process';
 
+import { Application, NextFunction, Request, Response } from 'express';
+import { ReasonPhrases, StatusCodes } from 'http-status-codes';
+
 import { version } from '../../package.json';
 
+import { ApiError } from '../abstractions/api-error';
 import { BaseApiRoute } from './base-api.route';
-import ApiError from '../abstractions/api-error';
 
-export class HealthRoute extends BaseApiRoute {
+export class StatusRoute extends BaseApiRoute {
   constructor(express: Application) {
     super();
     this.register(express);

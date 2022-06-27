@@ -6,4 +6,20 @@ This project demonstrates various concepts of backend technologies which has bee
 
 ## Development server
 
-First, we need to perform `npm install` to get the required dependencies for this backend server. Then, we can run `npm run start` for a dev server and navigate to `http://localhost:3000/api`. The server will automatically reload if you change any of the source files.
+- Step 1 - Perform `npm install` to get the required dependencies
+- Step 2 - Run `npm run start` and navigate to <http://localhost:3000/api>
+
+To check the server `status`, refer any of the below routes -
+
+- <http://localhost:3000/api/status/health>
+- <http://localhost:3000/api/status/system>
+- <http://localhost:3000/api/status/time>
+- <http://localhost:3000/api/status/usage>
+- <http://localhost:3000/api/status/process>
+- <http://localhost:3000/api/status/error>
+
+## Documentation
+
+- [Best Practices](./BEST_PRACTICES.md)
+- [Roadmaps](./ROADMAPS.md)
+- [Topics](./TOPICS.md)

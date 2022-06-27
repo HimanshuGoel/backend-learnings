@@ -1,15 +1,6 @@
-export interface IError {
-  status: number;
-  fields: {
-    name: {
-      message: string;
-    };
-  };
-  message: string;
-  name: string;
-}
+import { IError } from '../interfaces/error.interface';
 
-class ApiError extends Error implements IError {
+export class ApiError extends Error implements IError {
   public status = 500;
 
   public success = false;
@@ -23,5 +14,3 @@ class ApiError extends Error implements IError {
     this.status = statusCode;
   }
 }
-
-export default ApiError;

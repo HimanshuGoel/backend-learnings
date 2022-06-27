@@ -1,7 +1,7 @@
 import express from 'express';
 
-import { HealthRoute } from './routes/health.route';
+import { StatusRoute } from './routes/status.route';
 
-export default function registerRoutes(app: express.Application): void {
-  new HealthRoute(app);
+export function registerRoutes(app: express.Application): void {
+  new StatusRoute(app);
 }

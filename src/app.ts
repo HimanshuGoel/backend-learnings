@@ -1,15 +1,16 @@
 import cors from 'cors';
+import path from 'path';
 import morgan from 'morgan';
 import express from 'express';
 import bodyParser from 'body-parser';
-import path from 'path';
 import { config } from 'dotenv';
 
-import registerRoutes from './routes';
+import { registerRoutes } from './routes';
 import { setRequestHeaders } from './middlewares/request-headers';
+import { identifierConstants } from './constant/identifier.constants';
 
 class App {
-  public app!: express.Application;
+  public app: express.Application;
 
   constructor() {
     this.app = express();
@@ -38,7 +39,8 @@ class App {
   }
 
   private basePathRoute(request: express.Request, response: express.Response): void {
-    response.json({ api: 'backend-learnings', message: 'base path' });
+    const basePath = 'base path';
+    response.json({ api: identifierConstants.appName, message: basePath });
   }
 }
 

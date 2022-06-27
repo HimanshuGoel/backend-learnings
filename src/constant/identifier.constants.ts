@@ -1,1 +1,3 @@
-export const identifierConstants = {};
+export const identifierConstants = {
+  appName: 'backend-learnings'
+};
