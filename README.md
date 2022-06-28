@@ -6,8 +6,8 @@ This project demonstrates various concepts of backend technologies which has bee
 
 ## Development server
 
-- Step 1 - Perform `npm install` to get the required dependencies
-- Step 2 - Run `npm run start` and navigate to <http://localhost:3000/api>
+- [ ] Step 1 - Perform `npm install` to get the required dependencies
+- [ ] Step 2 - Run `npm run start` and navigate to <http://localhost:3000/api>
 
 To check the server `status`, refer any of the below routes -
 
@@ -23,3 +23,4 @@ To check the server `status`, refer any of the below routes -
 - [Best Practices](./BEST_PRACTICES.md)
 - [Roadmaps](./ROADMAPS.md)
 - [Topics](./TOPICS.md)
+- [Notes](./NOTES.md)
