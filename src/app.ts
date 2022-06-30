@@ -3,6 +3,7 @@ import path from 'path';
 import morgan from 'morgan';
 import express from 'express';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import { config } from 'dotenv';
 
 import { registerRoutes } from './routes';
@@ -15,8 +16,18 @@ class App {
   constructor() {
     this.app = express();
     this.setEnvironmentVariables();
+    this.setDatabase();
     this.setMiddlewares();
     this.setRoutes();
+  }
+
+  private setDatabase(): void {
+    mongoose.connect('mongodb://localhost:27017/backendLearningsDB');
+    const db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection:error:'));
+    db.once('open', function () {
+      console.log('Connected to MongoDB');
+    });
   }
 
   private setEnvironmentVariables(): void {
