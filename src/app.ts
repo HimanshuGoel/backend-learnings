@@ -12,6 +12,7 @@ import { identifierConstants } from './constant/identifier.constants';
 
 import { setGlobalEnvironment } from './global';
 import { Environment } from './environments/environment';
+import addErrorHandler from './middlewares/error-handler';
 
 const env: Environment = new Environment();
 setGlobalEnvironment(env);
@@ -25,6 +26,11 @@ class App {
     this.setDatabase();
     this.setMiddlewares();
     this.setRoutes();
+    this.addErrorHandler();
+  }
+
+  private addErrorHandler(): void {
+    this.app.use(addErrorHandler);
   }
 
   private setDatabase(): void {

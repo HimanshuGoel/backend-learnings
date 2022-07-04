@@ -8,6 +8,7 @@ import { version } from '../../package.json';
 
 import { ApiError } from '../abstractions/api-error';
 import { BaseApiRoute } from './base-api.route';
+import { sendResponse } from '../lib/response-handler';
 
 export class StatusRoute extends BaseApiRoute {
   constructor(express: Application) {
@@ -30,10 +31,17 @@ export class StatusRoute extends BaseApiRoute {
 
   private getEnv(req: Request, res: Response, next: NextFunction) {
     try {
-      res.status(StatusCodes.OK).send({
+      //   res.status(StatusCodes.OK).send({
+      //     status: ReasonPhrases.OK,
+      //     env: process.env
+      //   });
+
+      const data = {
         status: ReasonPhrases.OK,
         env: process.env
-      });
+      };
+
+      sendResponse(res, data, StatusCodes.OK, ReasonPhrases.OK);
     } catch (error) {
       next(error);
     }
