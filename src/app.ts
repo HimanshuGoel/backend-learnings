@@ -10,6 +10,12 @@ import { registerRoutes } from './routes';
 import { setRequestHeaders } from './middlewares/request-headers';
 import { identifierConstants } from './constant/identifier.constants';
 
+import { setGlobalEnvironment } from './global';
+import { Environment } from './environments/environment';
+
+const env: Environment = new Environment();
+setGlobalEnvironment(env);
+
 class App {
   public app: express.Application;
 

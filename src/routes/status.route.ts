@@ -24,7 +24,19 @@ export class StatusRoute extends BaseApiRoute {
       .get('/time', this.getServerTime)
       .get('/usage', this.getResourceUsage)
       .get('/process', this.getProcessInfo)
-      .get('/error', this.getError);
+      .get('/error', this.getError)
+      .get('/env', this.getEnv);
+  }
+
+  private getEnv(req: Request, res: Response, next: NextFunction) {
+    try {
+      res.status(StatusCodes.OK).send({
+        status: ReasonPhrases.OK,
+        env: process.env
+      });
+    } catch (error) {
+      next(error);
+    }
   }
 
   private getServerHealth(req: Request, res: Response, next: NextFunction) {
