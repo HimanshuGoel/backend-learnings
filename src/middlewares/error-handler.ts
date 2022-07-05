@@ -5,7 +5,7 @@ import { ApiError } from '../abstractions/api-error';
 import { encrypt } from '../lib/crypto';
 import { logger } from '../lib/logger';
 
-const addErrorHandler = (
+export const addErrorHandler = (
   err: ApiError,
   req: express.Request,
   res: express.Response,
@@ -39,5 +39,3 @@ const addErrorHandler = (
   }
   next();
 };
-
-export default addErrorHandler;

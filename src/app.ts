@@ -1,18 +1,17 @@
-import cors from 'cors';
 import path from 'path';
-import morgan from 'morgan';
-import express from 'express';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
+import cors from 'cors';
 import { config } from 'dotenv';
+import express from 'express';
+import mongoose from 'mongoose';
+import morgan from 'morgan';
 
-import { registerRoutes } from './routes';
-import { setRequestHeaders } from './middlewares/request-headers';
 import { identifierConstants } from './constant/identifier.constants';
-
-import { setGlobalEnvironment } from './global';
 import { Environment } from './environments/environment';
-import addErrorHandler from './middlewares/error-handler';
+import { setGlobalEnvironment } from './global';
+import { addErrorHandler } from './middlewares/error-handler';
+import { setRequestHeaders } from './middlewares/request-headers';
+import { registerRoutes } from './routes';
 
 const env: Environment = new Environment();
 setGlobalEnvironment(env);

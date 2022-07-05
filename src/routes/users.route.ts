@@ -1,8 +1,8 @@
 import { Application, NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-import { BaseApiRoute } from './base-api.route';
 import { User } from '../models/user.model';
+import { BaseApiRoute } from './base-api.route';
 
 export class UsersRoute extends BaseApiRoute {
   constructor(express: Application) {

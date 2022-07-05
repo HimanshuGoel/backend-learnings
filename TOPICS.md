@@ -1,5 +1,13 @@
 # Topics
 
-## Topic 1
+## Topic 1 - Using Environment Variables
 
-To be created...
+- environment.ts
+
+## Topic 2 - Using Winston Logging Library
+
+- logger.ts
+
+## Topic 3 - Using Crypto to Encrypt Response
+
+- crypto.ts

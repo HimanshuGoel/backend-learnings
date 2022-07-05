@@ -1,10 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
 import { config as configDotenv } from 'dotenv';
 
-import IEnvironment from './environment.interface';
 import { EnvironmentFile, Environments } from './environment.constant';
+import IEnvironment from './environment.interface';
 
 export class Environment implements IEnvironment {
   public port: number;
@@ -88,4 +87,3 @@ export class Environment implements IEnvironment {
     return this.getCurrentEnvironment() === Environments.STAGING;
   }
 }
-

@@ -58,8 +58,8 @@ export const encrypt = (data: string, secretKey: string): string => {
 
     // return the result
     return encryptedData;
-  } catch (exception) {
-    throw new Error(exception as any);
+  } catch (exception: unknown) {
+    throw new Error(String(exception));
   }
 };
 
@@ -104,6 +104,6 @@ export const decrypt = (data: string, secretKey: string): string => {
     // parse the string decrypted data
     return str;
   } catch (exception) {
-    throw new Error(exception as any);
+    throw new Error(String(exception));
   }
 };
