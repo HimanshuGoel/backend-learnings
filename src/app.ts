@@ -16,11 +16,11 @@ import { registerRoutes } from './routes';
 const env: Environment = new Environment();
 setGlobalEnvironment(env);
 
-class App {
-  public app: express.Application;
+export class App {
+  public express!: express.Application;
 
   constructor() {
-    this.app = express();
+    this.express = express();
     this.setEnvironmentVariables();
     this.setDatabase();
     this.setMiddlewares();
@@ -29,7 +29,7 @@ class App {
   }
 
   private addErrorHandler(): void {
-    this.app.use(addErrorHandler);
+    this.express.use(addErrorHandler);
   }
 
   private setDatabase(): void {
@@ -47,17 +47,17 @@ class App {
   }
 
   private setMiddlewares(): void {
-    this.app.use(cors());
-    this.app.use(morgan('tiny'));
-    this.app.use(setRequestHeaders);
-    this.app.use(bodyParser.json());
-    this.app.use(express.json({ limit: '300kb' }));
-    this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.express.use(cors());
+    this.express.use(morgan('tiny'));
+    this.express.use(setRequestHeaders);
+    this.express.use(bodyParser.json());
+    this.express.use(express.json({ limit: '300kb' }));
+    this.express.use(bodyParser.urlencoded({ extended: false }));
   }
 
   private setRoutes(): void {
-    this.app.get('/', this.basePathRoute);
-    registerRoutes(this.app);
+    this.express.get('/', this.basePathRoute);
+    registerRoutes(this.express);
   }
 
   private basePathRoute(request: express.Request, response: express.Response): void {
@@ -66,4 +66,4 @@ class App {
   }
 }
 
-export default new App().app;
+// export default new App;

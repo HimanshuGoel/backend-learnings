@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*", "tests/*"]
@@ -21,6 +21,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true
   },
-  "include": ["src/**/*.ts", ".env", ".env.*", "tests/**/*.ts", "index.js"],
+  "include": ["src/**/*.ts", ".env", ".env.*", "tests/**/*.ts",  "jest.config.js", "config/*.config.js"],
   "exclude": ["node_modules", "build"]
 }
