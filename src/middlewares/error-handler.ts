@@ -3,7 +3,7 @@ import * as express from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { ApiError } from '../abstractions/api-error';
 import { encrypt } from '../lib/crypto';
-import { logger } from '../lib/logger';
+import { logger } from '../utilities/logger.utility';
 
 export const addErrorHandler = (
   err: ApiError,

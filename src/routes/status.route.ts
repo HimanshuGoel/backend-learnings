@@ -5,7 +5,7 @@ import { ReasonPhrases, StatusCodes } from 'http-status-codes';
 
 import { version } from '../../package.json';
 import { ApiError } from '../abstractions/api-error';
-import { sendResponse } from '../lib/response-handler';
+import { sendResponse } from '../abstractions/response-handler';
 import { BaseApiRoute } from './base-api.route';
 
 export class StatusRoute extends BaseApiRoute {

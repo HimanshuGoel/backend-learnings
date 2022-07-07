@@ -333,7 +333,7 @@ schema.post('save', function (error, doc, next) {
 });
 ```
 
-By using Discriminators, we can extend our base schema so that we can have overlapping schema definition on top of a single MongoDB collection. It gives us an ability to store different details for diffrent documents within the same collection.
+By using Discriminators, we can extend our base schema so that we can have overlapping schema definition on top of a single MongoDB collection. It gives us an ability to store different details for different documents within the same collection.
 
 ```typescript
 var specialItemSchema = mongoose.Schema({

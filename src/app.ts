@@ -65,5 +65,3 @@ export class App {
     response.json({ api: identifierConstants.appName, message: basePath });
   }
 }
-
-// export default new App;

@@ -2,7 +2,7 @@
 
 ## Miscellaneous Features
 
-- [ ] Implement `.env` configuration files to load configurations based on running environment
+- [x] Implement `.env` configuration files to load configurations based on running environment
 
 - [ ] Find difference between `editorconfig` vs `.prettierrc` files to remove redundant settings
 

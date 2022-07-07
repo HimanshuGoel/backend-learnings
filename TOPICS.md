@@ -11,3 +11,11 @@
 ## Topic 3 - Using Crypto to Encrypt Response
 
 - crypto.ts
+
+## Topic 4 - Using Jest for Unit Testing
+
+- dummy.spec.ts, crypto.spec.ts, environment.spec.ts
+
+## Topic 5 - Using Supertest for Integration testing
+
+- status.integration.spec.ts

@@ -1,7 +1,7 @@
 import { Response } from 'express';
 
-import { encrypt } from './crypto';
-import { logger } from './logger';
+import { encrypt } from '../lib/crypto';
+import { logger } from '../utilities/logger.utility';
 
 export function sendResponse(
   res: Response,

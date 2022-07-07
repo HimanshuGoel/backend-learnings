@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "build": "npm audit && npm run lint && npm run pretty && tsc",
+    "build": "npm audit && npm run lint && npm run test && npm run pretty && tsc",
     "prod": "npm build && node ./build/src/server.js",
     "tsc": "tsc",
     "lint": "eslint src/**/*.ts",
@@ -13,7 +13,6 @@
     "pretty": "prettier --write src/**/*.ts"
   },
   "dependencies": {
-    "@types/supertest": "^2.0.12",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -23,8 +22,6 @@
     "mongodb": "^4.5.0",
     "mongoose": "^6.4.1",
     "morgan": "^1.10.0",
-    "supertest": "^6.2.4",
-    "ts-jest": "^28.0.5",
     "winston": "^3.8.1"
   },
   "devDependencies": {
@@ -34,6 +31,7 @@
     "@types/jest": "^28.1.4",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.40",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.17.0",
@@ -42,6 +40,8 @@
     "eslint-plugin-prettier": "^4.1.0",
     "jest": "^28.1.2",
     "prettier": "^2.7.0",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.5",
     "ts-loader": "^9.3.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.7.3"

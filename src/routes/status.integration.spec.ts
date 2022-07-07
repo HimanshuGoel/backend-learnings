@@ -4,13 +4,13 @@ import express from 'express';
 import { StatusCodes } from 'http-status-codes';
 import request from 'supertest';
 
-import IntegrationHelpers from '../utilities/Integration-helpers';
+import IntegrationTestsUtility from '../utilities/integration-tests.utility';
 
 describe('status integration tests', () => {
   let app: express.Application;
 
   beforeAll(async () => {
-    app = await IntegrationHelpers.getApp();
+    app = await IntegrationTestsUtility.getApp();
   });
 
   it('can get server time', async () => {
@@ -19,7 +19,6 @@ describe('status integration tests', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', 'application/json; charset=utf-8')
       .expect((res: request.Response) => {
-        // eslint-disable-next-line no-console
         console.log(res.text);
       })
       .expect(StatusCodes.OK);

@@ -6,7 +6,7 @@ const algorithm = 'aes-256-gcm';
 // iterations: It must be a number and should be set as high as possible.
 // So, the more is the number of iterations, the more secure the derived key will be,
 // but in that case it takes greater amount of time to complete.
-// number of interation - the value of 2145 is randomly chosen
+// number of integration - the value of 2145 is randomly chosen
 const iterations = 2145;
 
 // keylen: It is the key of the required byte length and it is of type number.
