@@ -1,18 +1,52 @@
 import { existsSync, mkdirSync } from 'fs';
+import { join } from 'path';
 
-import { Logger } from 'winston';
-import winston = require('winston');
+import { createLogger, format, transports } from 'winston';
 
 const logDir = './logs';
+
+const errorLog = join(logDir, 'error.log');
+const combinedLog = join(logDir, 'combined.log');
+const exceptionsLog = join(logDir, 'exceptions.log');
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);
 }
-
-export const logger: Logger = winston.createLogger({
-  format: winston.format.json(),
+export const logger = createLogger({
+  level: 'info',
+  format: format.combine(
+    format.timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }),
+    format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`)
+  ),
   transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: `${logDir}/combined.log` })
+    new transports.File({
+      filename: errorLog,
+      level: 'error'
+    }),
+    new transports.File({
+      filename: combinedLog
+    })
+  ],
+  exceptionHandlers: [
+    new transports.File({
+      filename: exceptionsLog
+    })
   ]
 });
+
+console.log('hG LOGS');
+console.log();
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new transports.Console({
+      format: format.combine(
+        format.colorize(),
+        format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`)
+      ),
+      level: 'debug'
+    })
+  );
+}

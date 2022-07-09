@@ -9,3 +9,7 @@
 - [ ] Configure `import sorter` to sort the import statements to improve the readiablity
 
 - [ ] Configure and perform deployment
+
+- [ ] Configure pre-commit and pre-push hooks like by using Husky
+
+- [ ] Configure authentication and authorization
